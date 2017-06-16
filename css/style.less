@@ -1,0 +1,131 @@
+.opn-reg{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
+.opn-bold{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+// Base color
+@base-black: #706b73;
+@base-red: #fc6744;
+@base-text: #626262;
+@bg-grey: #f5f5f5;
+@white: #fff;
+body {
+	font-size: 14px;
+	.opn-reg;
+	color: @base-text;
+}
+input, button, textarea {
+	&:focus {
+		outline: none;
+	}
+}
+header {
+	height: 100vh;
+	background-color: @bg-grey;
+	min-height: 700px;
+}
+.main {
+	&-head {
+		margin-top: 3%;
+	}
+	&-logo-border {
+		width: 155px;
+		height: 55px;
+		border: 3px solid @base-black;
+		text-align: center;
+		line-height: 49px;
+		p {
+			.opn-bold;
+			font-size: 36px;
+			color: @base-black;
+			&:first-letter{
+				color: lighten(@base-red, 5%);
+			}
+		}
+	}
+	&-text {
+		margin-top: 4%;
+		text-align: center;
+		h1 {
+			font-size: 50px;
+			.opn-bold;
+			span {
+				color: @base-red;
+			}
+		}
+		p {
+			padding-right: 18px;
+			padding-left: 18px;
+		}
+	}
+	&-nav {
+		text-align: right;
+	}
+	&-nav-bar {
+		height: 55px;
+		display: inline-block;
+	}
+	&-nav-btn {
+		position: relative;
+		top: 50%;
+    	transform: translateY(-50%);
+    	span {
+    		display: block;
+			height: 4px;
+			border-radius: 5px;
+			width: 35px;
+			margin: 3px auto;
+			background-color: @base-black;
+		}
+    }
+    &-form {
+    	margin-top: 10%;
+    	padding: 35px;
+    	background-color: @white;
+    	-webkit-box-shadow: 0px 0px 57px 0px rgba(20, 20, 21, 0.2);
+    	box-shadow: 0px 0px 57px 0px rgba(20, 20, 21, 0.2);
+    	-webkit-border-radius: 2px;
+    	-moz-border-radius: 2px;
+    	-ms-border-radius: 2px;
+    	-o-border-radius: 2px;
+    	border-radius: 2px;
+    	&-header {
+    		text-align: center;
+			font-size: 20px;
+			.opn-bold;
+			span {
+				color: @base-red;
+			}
+    	}
+    	&-btn {
+    		background-color: @base-red;
+    		color: @white;
+    		display: block;
+    		margin: 0 auto;
+    		margin-top: 30px;
+    		font-size: 16px;
+    		border: none;
+    		padding: 15px 35px;
+    		-webkit-border-radius: 50px;
+    		-moz-border-radius: 50px;
+    		-ms-border-radius: 50px;
+    		-o-border-radius: 50px;
+    		border-radius: 50px;
+    	}
+    	input, textarea {
+    		width: 100%;
+    		margin-top: 30px;
+    		font-size: 15px;
+    		border: none;
+    		border-bottom: 1px solid @base-black;
+    	}
+    }
+}
+
+
+
+
