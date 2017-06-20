@@ -276,3 +276,51 @@ i.fa-camera-retro {
 .works-row {
   margin-top: 3%;
 }
+.services-list {
+  list-style: none;
+}
+.services-list-item {
+  display: block;
+  background-color: #fbfbfb;
+  margin: 5px auto;
+  width: 100px;
+  height: 100px;
+  text-align: right;
+}
+.services-info h4 {
+  font-size: 30px;
+}
+.services-info p {
+  font-size: 16px;
+}
+.services-line {
+  width: 60px;
+  height: 4px;
+  background-color: #fc6744;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.services-btn {
+  border: none;
+  margin-top: 45px;
+  color: #706b73;
+  border: 1px solid #efeeef;
+  padding: 15px 55px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  -webkit-box-shadow: 0px 6px 14px 0px rgba(20, 20, 21, 0.09);
+  box-shadow: 0px 6px 14px 0px rgba(20, 20, 21, 0.09);
+}
+.panel-default > .panel-heading h4 {
+  color: #fc6744;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
