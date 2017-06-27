@@ -18,6 +18,8 @@
 @bg-koire: #817eff;
 @bg-lara: #f74770;
 @bg-services: #fbfbfb;
+@yellow: #ffef3b;
+@gray: #adadad;
 
 body {
 	font-size: 14px;
@@ -356,6 +358,96 @@ i.fa-camera-retro {
 		.opn-bold;
 	}
 }
+
+.feedback {
+	&-box {
+		padding: 10px;
+		margin: 0px 15px;
+		p {	
+			padding: 0px 30px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			font-size: 17px;
+			span {
+				.opn-bold;
+			}
+		}
+		i.fa-star {
+			color: @yellow;
+		}
+
+	}
+	&-img {
+		margin-bottom: -64px;
+	} 
+	&-shadow {
+		padding: 10px;
+		padding-top: 64px;
+		box-shadow: 0px 0px 27px 0px rgba(20, 20, 21, 0.09);
+	}
+	&-slider-arrows {
+		position: absolute;
+		top: 50%;
+		height: 50px;
+		width: 50px;
+		-webkit-transform: translateY(-9px);
+		-ms-transform: translateY(-9px);
+		-o-transform: translateY(-9px);
+		transform: translateY(-9px);
+		font-size: 18px;
+		z-index: 99;
+		box-shadow: 0px 3px 14px 0px rgba(20, 20, 21, 0.28);
+		padding: 16px;
+		text-align: center;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-o-border-radius: 50%;
+		border-radius: 50%;
+		background-color: @white;
+		&:hover {
+			cursor: pointer;
+			background-color: @base-red;
+			color: @white;
+		}
+	}
+
+}
+
+.slick-active {
+	outline: none;
+}
+
+.arrow-left {
+	left: 0;
+}
+
+.arrow-right {
+	right: 0;
+}
+
+
+.slick-dots li button:before {
+	width: 22px;
+	height: 7px;
+	color: transparent;
+	background-color: @gray;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.slick-dots li.slick-active button:before {
+	color: transparent;
+	background-color: @base-red;
+}
+
+.slick-dots {
+	bottom: -50px;
+}
+
 
 
 
