@@ -255,8 +255,13 @@ i.fa-camera-retro {
 }
 
 .works-box {
+	margin-top: 20px;
 	height: 360px;
 	position: relative;
+	overflow: hidden;
+	img {
+		width: 100%;
+	}
 }
 
 .sugnature {
@@ -278,6 +283,7 @@ i.fa-camera-retro {
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
+
 	&:hover {
 		opacity: 1;
 	}
@@ -307,6 +313,7 @@ i.fa-camera-retro {
 
 .services {
 	&-list {
+		padding-left: 0px;
 		list-style: none;
 			&-item {
 				display: block;
@@ -315,6 +322,7 @@ i.fa-camera-retro {
 				width: 100px;
 				height: 100px;
 				text-align: right;
+
 			}
 	}
 	&-info {
@@ -469,6 +477,108 @@ footer {
 	}
 }
 
+@media (min-width: 0px) and (max-width: 480px) {
+	.main {
+		&-text {
+			h1 {
+				font-size: 30px;
+			}
+		}
+	}
+	.section-header {
+		h2 {
+			font-size: 24px;
+		}
+	}
+
+	.process-box {
+		margin-top: 75px;
+	}
+
+	.services-list {
+		text-align: center;
+		&-item {
+			display: inline-block;
+		}
+	}
+	.works-box {
+		height: 220px;
+		margin-top: 20px;
+	}
+	.services-btn {
+		display: block;
+		margin: 10px auto;
+	}
+	.services-info {
+		img {
+			margin: 30px auto;
+		}
+	}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+	.process-box {
+		margin-top: 75px;
+	}
+	.works-box {
+		margin-top: 20px;
+		height: 455px;
+	}
+	.services-list {
+		text-align: center;
+		&-item {
+			display: inline-block;
+		}
+	}
+	.services-btn {
+		display: block;
+		margin: 10px auto;
+	}
+	.services-info {
+		img {
+			margin: 30px auto;
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.process-box {
+		margin-top: 75px;
+	}
+	.works-box {
+		height: 220px;
+	}
+	.services-list {
+		text-align: center;
+		&-item {
+			display: inline-block;
+		}
+	}
+	.services-btn {
+		display: block;
+		margin: 10px auto;
+	}
+	.services-info {
+		img {
+			margin: 30px auto;
+		}
+	}
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.works-box {
+		height: 294px;
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+	
+}
+
+@media (min-width: 1601px){
+	
+}
 
 
 
