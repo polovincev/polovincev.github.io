@@ -24,6 +24,16 @@
   </head>
   <body>
     <header>
+      <div class="video-container">
+        <div class="filter"></div>
+          <video autoplay loop class="fillWidth">
+            <source src="video-bg/MP4/Love-Coding.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="video-bg/WEBM/Love-Coding.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+          </video>
+        <div class="poster hidden">
+            <img src="video-bg/Snapshots/Love-Coding.jpg" alt="">
+        </div>
+      </div>
       <div class="container">
         <div class="row main-head">
           <div class="col-xs-6 main-logo">
@@ -107,6 +117,7 @@
         </div>
       </div>
     </section>
+
     <section id="works">
       <div class="container">
         <div class="row">
@@ -117,7 +128,7 @@
         </div>
         <div class="row works-row">
           <div class="col-md-4 col-sm-6 col-sx-12">
-            <div class="works-box">
+            <div class="works-box" >
               <img src="img/works/work-1.jpg" alt="Описание">
               <div class="sugnature">
                 <div class="sign">
@@ -336,6 +347,26 @@
       </div>
     </section>
 
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 section-header text-center">
+            <h2><span>Parallax</span> section</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem reprehenderit, molestiae distinctio.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <ul id="scene">
+              <li class="layer" id="layer-1" data-depth="0.50"><img src="img/parallax/1.png" alt=""></li>
+              <li class="layer" id="layer-2" data-depth="1.60"><img src="img/parallax/2.png" alt=""></li>
+              <li class="layer" id="layer-3" data-depth="3.40"><img src="img/parallax/3.png" alt=""></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="feedback">
       <div class="container">
         <div class="row">
@@ -447,8 +478,6 @@
       </div>
     </footer>
 
-
-
     <!-- modal -->
     <!-- modal-1 -->
     <div class="modal fade" id="modal-1" tabindex="-1" role="dialog">
@@ -490,10 +519,12 @@
     <script src="slick/slick.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/wow.min.js"></script>
+    <script src="js/jquery.parallax.js"></script>
 
     <script>
       new WOW().init();
     </script>
+
     <script>
       $(document).ready(function(){
         $('.feedback-slider').slick({
@@ -521,14 +552,79 @@
                   slidesToScroll: 1
                 }
               }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-
+            ]
         });
       });
     </script>
 
+    <script>
+      //jQuery is required to run this code
+      $( document ).ready(function() {
+
+          scaleVideoContainer();
+
+          initBannerVideoSize('.video-container .poster img');
+          initBannerVideoSize('.video-container .filter');
+          initBannerVideoSize('.video-container video');
+
+          $(window).on('resize', function() {
+              scaleVideoContainer();
+              scaleBannerVideoSize('.video-container .poster img');
+              scaleBannerVideoSize('.video-container .filter');
+              scaleBannerVideoSize('.video-container video');
+          });
+
+      });
+
+      function scaleVideoContainer() {
+
+          var height = $(window).height() + 5;
+          var unitHeight = parseInt(height) + 'px';
+          $('.homepage-hero-module').css('height',unitHeight);
+
+      }
+
+      function initBannerVideoSize(element){
+
+          $(element).each(function(){
+              $(this).data('height', $(this).height());
+              $(this).data('width', $(this).width());
+          });
+
+          scaleBannerVideoSize(element);
+
+      }
+
+      function scaleBannerVideoSize(element){
+
+          var windowWidth = $(window).width(),
+          windowHeight = $(window).height() + 5,
+          videoWidth,
+          videoHeight;
+
+          // console.log(windowHeight);
+
+          $(element).each(function(){
+              var videoAspectRatio = $(this).data('height')/$(this).data('width');
+
+              $(this).width(windowWidth);
+
+              if(windowWidth < 1000){
+                  videoHeight = windowHeight;
+                  videoWidth = videoHeight / videoAspectRatio;
+                  $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+
+                  $(this).width(videoWidth).height(videoHeight);
+              }
+
+              $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+
+          });
+      }
+    </script>
+
+    <script>
+      $('#scene').parallax();
+    </script>
   </body>
 </html>
